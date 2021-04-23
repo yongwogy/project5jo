@@ -57,16 +57,31 @@
 				</tr>
 				<tr>
 					<th>상태</th>
-					<td>${member.state}</td>
+					<td>
+						<c:choose>
+							<c:when test="${member.state == '0'}">
+								가입
+							</c:when>
+							<c:when test="${member.state == '1'}">
+								탈퇴
+							</c:when>
+						</c:choose>
+					</td>
 				</tr>
 				<tr>
 					<td colspan="2">
 						<input type="button" value="목록"
 							onClick="location.href='./AdminListAction.sw?page=${page}'">
-						<input type="button" value="탈퇴"
-							onClick="location.href='./AdminDeleteAction.sw?id=${member.id}&page=${page}'">
-						<input type="button" value="복구"
-							onClick="location.href='./AdminRecoverAction.sw?id=${member.id}&page=${page}'">
+						<c:choose>
+							<c:when test="${member.state == '0'}">
+								<input type="button" value="탈퇴"
+									onClick="location.href='./AdminDeleteAction.sw?id=${member.id}&page=${page}'">
+							</c:when>
+							<c:when test="${member.state == '1'}">
+								<input type="button" value="복구"
+									onClick="location.href='./AdminRecoverAction.sw?id=${member.id}&page=${page}'">
+							</c:when>
+						</c:choose>
 					</td>
 				</tr>
 

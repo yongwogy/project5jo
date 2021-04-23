@@ -28,7 +28,16 @@
 						<td>${m.id}</td>
 						<td>${m.name}</td>
 						<td><fmt:formatDate value="${m.reg_date}" pattern="yyyy-MM-dd" /></td>
-						<td>${m.state}</td>
+						<td>
+							<c:choose>
+								<c:when test="${m.state == '0'}">
+									가입
+								</c:when>
+								<c:when test="${m.state == '1'}">
+									탈퇴
+								</c:when>
+							</c:choose>
+						</td>
 						<td>${m.grade}</td>
 					</tr>
 				</c:forEach>

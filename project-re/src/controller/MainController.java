@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.Action;
 import service.ActionForward;
+import service.main.MainAction;
 
 /**
  * Servlet implementation class MainController
@@ -32,9 +33,16 @@ public class MainController extends HttpServlet {
 		Action action = null;
 		ActionForward forward = null;
 		
-		
-		
-		
+		//서블릿
+		// 메인 화면
+		if (command.equals("/MainAction.do")) {
+			try {
+				action = new MainAction();
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				
+			}
+		}
 		
 		// forwarding 처리
 		if(forward != null) {
