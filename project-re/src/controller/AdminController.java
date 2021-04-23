@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.Action;
 import service.ActionForward;
+import service.admin.AdminDelete;
+import service.admin.AdminDetailAction;
 import service.admin.AdminListAction;
+import service.admin.AdminRecover;
 
 /**
  * Servlet implementation class AdminController
@@ -42,8 +45,47 @@ public class AdminController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		
+		// 회원 상세 페이지
+		} else if (command.equals("/AdminDetailAction.sw")) {
+			try {
+				action = new AdminDetailAction();
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			
-		}
+		// 회원 탈퇴(강퇴) 폼
+		} else if (command.equals("/AdminDeleteAction.sw")) {
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("/admin/admin_member_kick.jsp");
+		
+		// 회원 탈퇴(강퇴)
+		} else if (command.equals("/AdminDelete.sw")) {
+			try {
+				action = new AdminDelete();
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		// 회원 복구 폼
+		} else if (command.equals("/AdminRecoverAction.sw")) {
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("/admin/admin_member_recover.jsp");
+			
+		// 회원 복구
+		} else if (command.equals("/AdminRecover.sw")) {
+			try {
+				action = new AdminRecover();
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}	// if end
 		
 		// 포워딩
 		if(forward != null) {

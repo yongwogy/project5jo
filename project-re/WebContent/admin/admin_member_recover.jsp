@@ -8,15 +8,15 @@
     <section>
 		<div id="contents" class="col-10 container-fluid">
 			<article class="row h-50">
-				<h3>회원 강제 탈퇴</h3>
-				<form action="<%=request.getContextPath() %>/AdminDelete.sw" method="post">
+				<h3>회원 복구</h3>
+				<form action="<%=request.getContextPath() %>/AdminRecover.sw" method="post">
 					<input type="hidden" name="grade" value="${sessionScope.grade}">
 					<input type="hidden" name="id" value="${param.id }"> 
 					<input type="hidden" name="page" value="${param.page }"> 
 					<table class="table table-bordered">
 						<tr>
 							<td colspan="2">
-								탈퇴시키시려면 '<span style = 'color:red;'>회원탈퇴</span>' 를 입력하세요
+								복구시키시려면 '<span style = 'color:red;'>회원복구</span>' 를 입력하세요
 							</td>
 						</tr>
 						<tr>
@@ -27,7 +27,7 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<input type="submit" value="탈퇴">
+								<input type="submit" value="복구">
 								<input type="reset" value="취소">
 							</td>
 						</tr>

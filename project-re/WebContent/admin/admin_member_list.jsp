@@ -10,7 +10,7 @@
 	<div id="contents" class="col-10 container-fluid">
 		<article class="row h-75">
 			<h3>회원 목록</h3>
-			<p>총 회원수 : ${listcount - 1}</p>
+			<p>총 회원수 : ${listcount - 2}</p>
 			<table class="table table-info table-hover">
 				<tr>
 					<th>번호</th>

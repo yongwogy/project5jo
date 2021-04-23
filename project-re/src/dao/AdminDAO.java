@@ -109,4 +109,100 @@ public class AdminDAO {
 		
 		return list;
 	}
+	
+	// 상세 정보 구하기
+	public AdminBean getDetail(String id) {
+		AdminBean member = new AdminBean();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			con = getConnection();
+			
+			String sql = "select * from member where id = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();		// SQL문 실행
+			
+			if(rs.next()) {
+				member.setId(rs.getString("id"));
+				member.setPass(rs.getString("pass"));
+				member.setName(rs.getString("name"));
+				member.setMailid(rs.getString("mailid"));
+				member.setDomain(rs.getString("domain"));
+				member.setPost(rs.getString("post"));
+				member.setAddress(rs.getString("address"));
+				member.setBirth(rs.getString("birth"));
+				member.setPhone1(rs.getString("phone1"));
+				member.setPhone2(rs.getString("phone2"));
+				member.setPhone3(rs.getString("phone3"));
+				member.setSex(rs.getString("sex"));
+				member.setReg_date(rs.getTimestamp("reg_date"));
+				member.setGrade(rs.getInt("grade"));
+				member.setState(rs.getInt("state"));
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs!=null) try { rs.close(); }catch(Exception e) {}
+			if(pstmt!=null) try { pstmt.close(); }catch(Exception e) {}
+			if(con!=null) try { con.close(); }catch(Exception e) {}
+		}
+		
+		return member;
+	}
+	
+	// 회원 탈퇴(강퇴)
+	public int delete(String id) {
+		int result = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = getConnection();
+			
+			String sql = "update member set state = 1 where id = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			result = pstmt.executeUpdate();	// SQL문 실행
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(pstmt!=null) try { pstmt.close(); }catch(Exception e) {}
+			if(con!=null) try { con.close(); }catch(Exception e) {}
+		}
+		
+		return result;
+	}
+	
+	// 회원 복구
+	public int recover(String id) {
+		int result = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = getConnection();
+			
+			String sql = "update member set state = 0 where id = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			result = pstmt.executeUpdate();	// SQL문 실행
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(pstmt!=null) try { pstmt.close(); }catch(Exception e) {}
+			if(con!=null) try { con.close(); }catch(Exception e) {}
+		}
+		
+		return result;
+	}
 }

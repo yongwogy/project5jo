@@ -25,7 +25,7 @@ public class NoticeDetailAction implements Action {
 		// 상세정보 구하기
 		NoticeBean notice = dao.getDetail(num);
 		
-		// 내용 줄 바꿈 설정
+		// 글 내용 줄 바꿈 설정
 		String content = notice.getContent().replace("\n", "<br>");
 		
 		// 공유 설정
