@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
     
 <!-- header 파일 불러오기 -->
 <%@ include file="/header.jsp" %>
@@ -38,6 +37,9 @@
 			</article>
 		</div>
 	</section>
+	
+<!-- js 불러오기 -->
+<script src="<%=request.getContextPath() %>/js/notice.js"></script>
 	
 <!-- footer 파일 불러오기 -->
 <%@ include file="/footer.jsp" %>
