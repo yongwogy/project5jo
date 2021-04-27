@@ -14,7 +14,7 @@
 </head>
 <body>
 	<section>
-	
+		<div id="contents" class="col-10 container-fluid">  
 		<form method="post" action="<%=request.getContextPath()%>/Login.yw">
 			<table border=1 width=400 align=center style="color : green">
 				<caption>로그인</caption>
@@ -38,6 +38,7 @@
 
 			</table>
 		</form>
+		</div>
 	</section>
 
 	<!-- footer 파일 불러오기 -->

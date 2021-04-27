@@ -3,7 +3,7 @@ $(document).ready(function(){
 	// ID체크(중복검사 및 유효아이디 영문명 길이는 최소 6이상 10자 이하)
 	$("#idcheck").click(function(){
 		
-		var pattern  = /^[a-zA-Z]+$/;      // 영문 소문자, 대문자, 숫자(0~9)
+		var pattern  = /^[a-zA-Z]+$/;      // 영문 소문자, 대문자
 		var id = $("#id").val();
 		
 		if($("#id").val()==""){

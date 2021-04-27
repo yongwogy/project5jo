@@ -14,7 +14,7 @@ $(document).ready(function(){
 			return false;
 		}else if($("#newpass").val().length < 6 || $("#pass").val().length > 10){
 			$("#mynewpass").text("새 비밀번호는 6~10자리입니다");
-			$("new#pass").val("").focus();
+			$("#newpass").val("").focus();
 			return false;
 		}else{
 			$("#mynewpass").text("사용가능한 새로운 비밀번호입니다");

@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<!-- 외부 자바스크립트 파일 불러오기 -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="./member/a_quitmember.js"></script>
 
 	<!-- header 파일 불러오기 -->
 	<%@ include file="/header.jsp"%>
@@ -9,7 +12,7 @@
 </head>
 <body>
 	<section>
-	
+		<div id="contents" class="col-10 container-fluid">  
 		<form method="post" action="<%=request.getContextPath()%>/QuitMemberOperation.yw">
 		<input type="hidden" name="id" value="${member.id}">
 			<table border=1 width=350 align=center style="color : green">
@@ -33,6 +36,7 @@
 
 			</table>
 		</form>
+		</div>
 	</section>
 
 	<!-- footer 파일 불러오기 -->

@@ -5,6 +5,7 @@
 <%@ include file="/header.jsp" %>
     
     <section>
+   		<div id="contents" class="col-10 container-fluid"> 
 		<table border=1 width=350 align=center style="color : green">
 			<caption>내정보</caption>
 				<tr>
@@ -65,7 +66,8 @@
 					</td>
 				</tr>
 
-			</table>
+		</table>
+		</div>
 	</section>
 	
 <!-- footer 파일 불러오기 -->
