@@ -33,7 +33,7 @@
 <form method="post" action="<%=request.getContextPath() %>/UpdateInsert.yw"> 
 <input type="hidden" name="id" value="${member.id}">
 <table border=1 width=500 align=center style="color : green">
-	<caption>회원 가입</caption>
+	<caption class="captop">내정보 수정</caption>
 	<tr>
 		<td>ID</td>
 		<td>${member.id }</td>

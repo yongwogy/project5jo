@@ -16,7 +16,7 @@
 
 <form method="post" action="<%=request.getContextPath() %>/SearchPassOperation.yw"> 
 <table border=1 width=500 align=center style="color : green">
-	<caption>비밀번호 찾기</caption>
+	<caption class="captop">비밀번호 찾기</caption>
 	
 	<tr>
 		<td>ID</td>

@@ -18,7 +18,7 @@
 <form method="post" action="<%=request.getContextPath() %>/UpdateMypassInsert.yw"> 
 <input type="hidden" name="id" value="${member.id}">
 <table border=1 width=500 align=center style="color : green">
-	<caption>비밀번호 수정</caption>
+	<caption class="captop">비밀번호 수정</caption>
 	<tr>
 		<td>ID</td>
 		<td>${member.id }</td>

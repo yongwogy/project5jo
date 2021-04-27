@@ -17,7 +17,7 @@
 		<div id="contents" class="col-10 container-fluid">  
 		<form method="post" action="<%=request.getContextPath()%>/Login.yw">
 			<table border=1 width=400 align=center style="color : green">
-				<caption>로그인</caption>
+				<caption class="captop">로그인</caption>
 				<tr>
 					<td>ID</td>
 					<td colspan=2><input type=text size=30 id="id" name="id"

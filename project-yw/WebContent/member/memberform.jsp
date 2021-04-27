@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
 	function openDaumPostcode() {
@@ -27,12 +26,13 @@
 <!-- header 파일 불러오기 -->
 <%@ include file="/header.jsp" %>
 
+	
     <section>
 		<div id="contents" class="col-10 container-fluid">    
 
-<form method="post" action="<%=request.getContextPath() %>/MemberInsert.yw"> 
+<form method="post" action="<%=request.getContextPath() %>/MemberInsert.yw" class="formdeco"> 
 <table border=1 width=500 align=center style="color : green">
-	<caption>회원 가입</caption>
+	<caption class="captop">회원 가입</caption>
 	<tr>
 		<td>ID</td>
 		<td>

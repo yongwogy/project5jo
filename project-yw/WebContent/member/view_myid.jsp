@@ -7,7 +7,7 @@
     <section>
    		<div id="contents" class="col-10 container-fluid"> 
 		<table border=1 width=350 align=center style="color : green">
-			<caption>내ID</caption>
+			<caption class="captop">내ID</caption>
 				<tr>
 					<td>ID</td>
 					<td>${member.id }</td>

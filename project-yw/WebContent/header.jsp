@@ -12,7 +12,7 @@
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<title>OOO팬 카페</title>
 	<link rel="stylesheet" type="text/css" href="css/default.css">
-	
+	<link rel="stylesheet" type="text/css" href="css/member.css">
 	
 	
 	

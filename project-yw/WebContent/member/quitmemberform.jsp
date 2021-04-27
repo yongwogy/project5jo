@@ -16,7 +16,7 @@
 		<form method="post" action="<%=request.getContextPath()%>/QuitMemberOperation.yw">
 		<input type="hidden" name="id" value="${member.id}">
 			<table border=1 width=350 align=center style="color : green">
-				<caption>회원탈퇴</caption>
+				<caption class="captop">회원탈퇴</caption>
 				<tr>
 					<td>ID</td>
 					<td colspan=2>${member.id }</td>

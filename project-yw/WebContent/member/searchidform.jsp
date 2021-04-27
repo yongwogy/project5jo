@@ -16,7 +16,7 @@
 
 <form method="post" action="<%=request.getContextPath() %>/SearchIdOperation.yw"> 
 <table border=1 width=500 align=center style="color : green">
-	<caption>아이디 찾기</caption>
+	<caption class="captop">아이디 찾기</caption>
 		
 	<tr>
 		<td>성명</td>

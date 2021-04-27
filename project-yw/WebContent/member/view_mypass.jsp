@@ -7,7 +7,7 @@
     <section>
    		<div id="contents" class="col-10 container-fluid"> 
 		<table border=1 width=350 align=center style="color : green">
-			<caption>내 비밀번호</caption>
+			<caption class="captop">내 비밀번호</caption>
 				<tr>
 					<td>비밀번호</td>
 					<td>${member.pass }</td>
