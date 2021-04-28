@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+	.captop {
+		caption-side: top;
+		font-size: 30px;
+		font-weight: bold;
+		font-style: oblique;
+	}
+	
+	.formdeco{
+		background: white;
+		border-width: 5px;
+		border-color: gray;
+		height: 550px;
+	
+	}
+	
+	.tabledeco{
+
+		
+	}
