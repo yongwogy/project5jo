@@ -9,40 +9,53 @@
 <section>
 	<div id="contents" class="col-10 container-fluid">
 		<article class="row h-75">
-			<h3>공지사항</h3>
-			<p>글 갯수 : ${listcount }</p>
-			<table class="table table-hover">
-				<tr>
-					<th>번호</th>
-					<th>제목</th>
-					<th>작성자</th>
-					<th>날짜</th>
-					<th>조회수</th>
-				</tr>
-
-				<c:set var="num" value="${listcount - (page-1) *10 }" />
-				<c:forEach var="n" items="${noticelist }">
+			<div class="position-relative">
+				<h3 class="position-absolute top-50 start-50 translate-middle-x">공지사항</h3>
+			</div>			
+			<div>
+				<p class="py-1">글 갯수 : ${listcount }</p>
+			<table class="table table-hover table-striped text-center">
+				<thead>
 					<tr>
-						<td>
-							<!-- 번호 --> ${num} <c:set var="num" value="${num-1 }" />
-						</td>
-						<td><a href="./NoticeDetailAction.sh?num=${n.num}&page=${page}">${n.subject}</a></td>
-						<td>${n.id}</td>
-						<td><fmt:formatDate value="${n.reg_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
-						<td>${n.readcount}</td>
+						<th>번호</th>
+						<th class="w-50">제목</th>
+						<th>작성자</th>
+						<th>날짜</th>
+						<th>조회수</th>
 					</tr>
-				</c:forEach>
+				</thead>
+				<tbody>
+					<c:set var="num" value="${listcount - (page-1) *10 }" />
+					<c:forEach var="n" items="${noticelist }">
+						<tr>
+							<td>
+								<!-- 번호 --> ${num} <c:set var="num" value="${num-1 }" />
+							</td>
+							<td class="text-start"><a href="./NoticeDetailAction.sh?num=${n.num}&page=${page}">${n.subject}</a></td>
+							<td>${n.id}</td>
+							<td><fmt:formatDate value="${n.reg_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+							<td>${n.readcount}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
 			</table>
-			<div class="container">
 				<!-- 글쓰기 버튼 -->
-				<div>
+				<div class="row py-1">
 					<c:if test="${sessionScope.grade eq '1' }">
-						<button type="button" class="btn btn-secondary"
-							onClick="location.href='./NoticeForm.sh'">글쓰기</button>
+						<div class="col-6">
+							<button type="button" class="btn btn-secondary"
+								onClick="location.href='./NoticeForm.sh'">글쓰기</button>
+						</div>
+						<div class="col-6 text-end">
+							<button type="button" class="btn btn-secondary"
+								onClick="location.href='./NoticeForm.sh'">글쓰기</button>
+						</div>
 					</c:if>
 				</div>
+			</div>
+			<div class="position-relative">
 				<!-- 페이징 영역 -->
-				<div style="float: none; margin: 0 auto;">
+				<div class="position-absolute bottom-25 start-50 translate-middle-x" >
 					<!-- bootstrap -->
 					<c:if test="${listcount > 0 }">
 						<div aria-label="...">
@@ -55,7 +68,7 @@
 								<!-- 이전 블럭으로 이동 -->
 								<c:if test="${startPage > 10 }">
 									<li class="page-item">
-										<a class="page-link" href="./NoticeListAction.sh?page=1"> < </a>
+										<a class="page-link" href="./NoticeListAction.sh?page=${startPage-10}"> < </a>
 									</li>
 								</c:if>
 								
@@ -92,9 +105,7 @@
 								</li> -->
 							</ul>
 						</div>
-					
 					</c:if>
-
 					<%-- <c:if test="${listcount > 0 }">
 
 						<!-- 1 페이지로 이동 -->

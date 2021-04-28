@@ -15,7 +15,7 @@
 					<input type="hidden" name="page" value="${param.page }"> 
 					<table class="table table-bordered">
 						<tr>
-							<td colspan="2">
+							<td colspan="2" class="text-center">
 								복구시키시려면 '<span style = 'color:red;'>회원복구</span>' 를 입력하세요
 							</td>
 						</tr>
@@ -26,7 +26,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2">
+							<td colspan="2" class="text-center">
 								<input type="submit" value="복구">
 								<input type="reset" value="취소">
 							</td>

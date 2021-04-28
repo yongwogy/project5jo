@@ -9,45 +9,48 @@
     <section>
 		<div id="contents" class="col-10 container-fluid">
 			<article class="row h-50">
-				<h3></h3>
-				<table class="table table-bordered">
-					<tr>
-						<th>제목</th>
-						<td>
-							${notice.subject}
-						</td>
-					</tr>
-					<tr>
-						<th>작성자</th>
-						<td>
-							${notice.id}
-						</td>
-					</tr>
-					<tr>
-						<th>작성일</th>
-						<td>
-							<fmt:formatDate value="${notice.reg_date}" pattern="yyyy-MM-dd HH:mm:ss" />
-						</td>
-					</tr>
-					<tr>
-						<th>내용</th>
-						<td>
-							${content}
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<c:if test="${sessionScope.grade eq '1' }">
-								<input type="button" value="수정"
-									onClick="location.href='./NoticeModifyAction.sh?num=${notice.num}&page=${page}'">
-								<input type="button" value="삭제"
-									onClick="location.href='./NoticeDeleteAction.sh?num=${notice.num}&page=${page}'">
-							</c:if>
-							<input type="button" value="목록"
-								onClick="location.href='./NoticeListAction.sh?page=${page}'">
-						</td>
-					</tr>
-				</table>
+				<div class="position-relative">
+					<h3 class="position-absolute top-50 start-50 translate-middle-x">공지사항</h3>
+				</div>
+				<div>
+					<table class="table table-bordered border-dark">
+						<tr>
+							<th class="text-center">제목</th>
+							<td>
+								${notice.subject}
+							</td>
+						</tr>
+						<tr>
+							<th class="text-center">작성자</th>
+							<td>
+								${notice.id}
+							</td>
+						</tr>
+						<tr>
+							<th class="text-center">작성일</th>
+							<td>
+								<fmt:formatDate value="${notice.reg_date}" pattern="yyyy-MM-dd HH:mm:ss" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="bg-white">
+								${content}
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="text-center">
+								<c:if test="${sessionScope.grade eq '1' }">
+									<input type="button" value="수정" class="btn btn-secondary btn-sm"
+										onClick="location.href='./NoticeModifyAction.sh?num=${notice.num}&page=${page}'">
+									<input type="button" value="삭제" class="btn btn-secondary btn-sm"
+										onClick="location.href='./NoticeDeleteAction.sh?num=${notice.num}&page=${page}'">
+								</c:if>
+								<input type="button" value="목록" class="btn btn-secondary btn-sm"
+									onClick="location.href='./NoticeListAction.sh?page=${page}'">
+							</td>
+						</tr>
+					</table>
+				</div>
 			</article>
 		</div>
 	</section>

@@ -10,7 +10,7 @@
 			<!-- 이전 블럭으로 이동 -->
 			<c:if test="${startPage > 10 }">
 				<li class="page-item">
-					<a class="page-link" href="./NoticeListAction.sh?page=1"> < </a>
+					<a class="page-link" href="./NoticeListAction.sh?page=${startPage-10}"> < </a>
 				</li>
 			</c:if>
 			

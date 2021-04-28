@@ -45,37 +45,51 @@
 			<div class="container">
 				<!-- 페이징 영역 -->
 				<div style="float: none; margin: 0 auto;">
+					<!-- bootstrap -->
 					<c:if test="${listcount > 0 }">
-
-						<!-- 1 페이지로 이동 -->
-						<a href="./AdminListAction.sw?page=1"
-							style="text-decoration: none"> 처음으로 </a>
-
-						<!-- 이전 블럭으로 이동 -->
-						<c:if test="${startPage > 20 }">
-							<a href="./AdminListAction.sw?page=${startPage-20}">[이전]</a>
-						</c:if>
-
-						<!-- 각 블럭에 10개의 페이지 출력 -->
-						<c:forEach var="i" begin="${startPage }" end="${endPage }">
-							<c:if test="${i == page }">
-								<!-- 현재 페이지 -->
-								[${i}]
-							</c:if>
-							<c:if test="${i != page }">
-								<!-- 현재 페이지가 아닌 경우 -->
-								<a href="./AdminListAction.sw?page=${i}">[${i}]</a>
-							</c:if>
-						</c:forEach>
-
-						<!-- 다음 블럭으로 이동 -->
-						<c:if test="${endPage < pageCount }">
-							<a href="./AdminListAction.sw?page=${startPage+20 }">[다음]</a>
-						</c:if>
-
-						<!-- 마지막 페이지로 이동 -->
-						<a href="./AdminListAction.sw?page=${pageCount }"
-							style="text-decoration: none"> 끝으로 </a>
+						<div aria-label="...">
+							<ul class="pagination">
+								<!-- 1 페이지로 이동 -->
+								<li class="page-item">
+									<a class="page-link" href="./NoticeListAction.sh?page=1"> << </a>
+								</li>
+								
+								<!-- 이전 블럭으로 이동 -->
+								<c:if test="${startPage > 10 }">
+									<li class="page-item">
+										<a class="page-link" href="./NoticeListAction.sh?page=${startPage-10}"> < </a>
+									</li>
+								</c:if>
+								
+								<!-- 각 블럭에 10개의 페이지 출력 -->
+								<c:forEach var="i" begin="${startPage }" end="${endPage }">
+									<c:if test="${i == page }">
+										<!-- 현재 페이지 -->
+										<li class="page-item active">
+											<a class="page-link">${i}</a>
+										</li>
+									</c:if>
+									<c:if test="${i != page }">
+										<!-- 현재 페이지가 아닌 경우 -->
+										<li class="page-item">
+											<a class="page-link" href="./NoticeListAction.sh?page=${i}">${i}</a>
+										</li>
+									</c:if>
+								</c:forEach>
+								
+								<!-- 다음 블럭으로 이동 -->
+								<c:if test="${endPage < pageCount }">
+									<li class="page-item" aria-current="page">
+										<a class="page-link" href="./NoticeListAction.sh?page=${startPage+10 }"> > </a>
+									</li>
+								</c:if>
+							
+								<!-- 마지막 페이지로 이동 -->
+								<li class="page-item">
+									<a class="page-link" href="./NoticeListAction.sh?page=${pageCount }"> >> </a>
+								</li>
+							</ul>
+						</div>
 					</c:if>
 					
 				</div>

@@ -9,30 +9,35 @@
     <section>
 		<div id="contents" class="col-10 container-fluid">
 			<article class="row h-50">
-				<h3>글 작성</h3>
-				<form action="<%=request.getContextPath() %>/NoticeAddAction.sh" method="post">
-					<input type="hidden" name="id" value="${sessionScope.id }">
-					<table class="table table-bordered">
-						<tr>
-							<th>제목</th>
-							<td>
-								<input type="text" name="subject" id="subject" maxlength="100">
-							</td>
-						</tr>
-						<tr>
-							<th>내용</th>
-							<td>
-								<textarea class="form-control" name="content" id="content" cols="67" rows="15"></textarea>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2">
-								<input type="submit" value="등록">
-								<input type="reset" value="취소">
-							</td>
-						</tr>
-					</table>
-				</form>
+				<div class="position-relative">
+					<h3 class="position-absolute top-50 start-50 translate-middle-x">공지사항 작성</h3>
+				</div>
+				<div>
+					<form action="<%=request.getContextPath() %>/NoticeAddAction.sh" method="post">
+						<input type="hidden" name="id" value="${sessionScope.id }">
+						<table class="table table-bordered border-dark">
+							<tr>
+								<th class="text-center">제목</th>
+								<td>
+									<input type="text" name="subject" id="subject" maxlength="100" class="w-100">
+								</td>
+							</tr>
+							<tr>
+								<th class="text-center">내용</th>
+								<td>
+									<textarea class="form-control" name="content" id="content" cols="67" rows="15"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" class="text-center">
+								
+									<input type="submit" class="btn btn-secondary btn-sm" value="등록">
+									<input type="reset" class="btn btn-secondary btn-sm" value="취소">
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
 			</article>
 		</div>
 	</section>
