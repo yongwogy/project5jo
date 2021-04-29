@@ -4,7 +4,7 @@
 
 
 <!-- header 파일 불러오기 -->
-<%@ include file="/header.jsp" %>
+<%@ include file="/common/header.jsp" %>
     
     <section>
 		<div id="contents" class="col-10 container-fluid">
@@ -32,7 +32,7 @@
 								<td colspan="2" class="text-center">
 								
 									<input type="submit" class="btn btn-secondary btn-sm" value="등록">
-									<input type="reset" class="btn btn-secondary btn-sm" value="취소">
+									<input type="reset" class="btn btn-secondary btn-sm" onClick="history.go(-1)" value="취소">
 								</td>
 							</tr>
 						</table>
@@ -47,4 +47,4 @@
 <script src="<%=request.getContextPath() %>/js/notice.js"></script>
 
 <!-- footer 파일 불러오기 -->
-<%@ include file="/footer.jsp" %>
+<%@ include file="/common/footer.jsp" %>

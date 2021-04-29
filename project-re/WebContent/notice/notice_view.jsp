@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
     
 <!-- header 파일 불러오기 -->
-<%@ include file="/header.jsp" %>
+<%@ include file="/common/header.jsp" %>
     
     <section>
 		<div id="contents" class="col-10 container-fluid">
@@ -56,4 +56,4 @@
 	</section>
 	
 <!-- footer 파일 불러오기 -->
-<%@ include file="/footer.jsp" %>
+<%@ include file="/common/footer.jsp" %>

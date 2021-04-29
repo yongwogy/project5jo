@@ -85,6 +85,21 @@ public class AdminController extends HttpServlet {
 				e.printStackTrace();
 			}
 			
+		// 게시판 글 삭제
+		} else if (command.equals("/AdminBoardDelete.sw")) {
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("/admin/admin_board_Delete.jsp");
+			
+			/*
+			 * // QnA 게시판 글 삭제 } else if (command.equals("/AdminQnaDelete.sw")) { forward =
+			 * new ActionForward(); forward.setRedirect(false);
+			 * forward.setPath("/admin/admin_qna_Delete.jsp");
+			 * 
+			 * // 갤러리 게시판 글 삭제 } else if (command.equals("/AdminGalleryDelete.sw")) {
+			 * forward = new ActionForward(); forward.setRedirect(false);
+			 * forward.setPath("/admin/admin_gallery_Delete.jsp");
+			 */
 		}	// if end
 		
 		// 포워딩

@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!-- header 파일 불러오기 -->
-<%@ include file="/header.jsp"%>
+<%@ include file="/common/header.jsp"%>
 
 <section>
 	<div id="contents" class="col-10 container-fluid">
@@ -31,7 +31,7 @@
 							<td>
 								<!-- 번호 --> ${num} <c:set var="num" value="${num-1 }" />
 							</td>
-							<td class="text-start"><a href="./NoticeDetailAction.sh?num=${n.num}&page=${page}">${n.subject}</a></td>
+							<td class="text-start"><a href="./NoticeDetailAction.sh?num=${n.num}&page=${page}" class="text-dark">${n.subject}</a></td>
 							<td>${n.id}</td>
 							<td><fmt:formatDate value="${n.reg_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 							<td>${n.readcount}</td>
@@ -99,46 +99,9 @@
 								<li class="page-item">
 									<a class="page-link" href="./NoticeListAction.sh?page=${pageCount }"> >> </a>
 								</li>
-								
-								<!-- <li class="page-item">
-									<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> < </a>
-								</li> -->
 							</ul>
 						</div>
 					</c:if>
-					<%-- <c:if test="${listcount > 0 }">
-
-						<!-- 1 페이지로 이동 -->
-						<a href="./NoticeListAction.sh?page=1"
-							style="text-decoration: none"> << </a>
-
-						<!-- 이전 블럭으로 이동 -->
-						<c:if test="${startPage > 10 }">
-							<a href="./NoticeListAction.sh?page=${startPage-10}">[이전]</a>
-						</c:if>
-
-						<!-- 각 블럭에 10개의 페이지 출력 -->
-						<c:forEach var="i" begin="${startPage }" end="${endPage }">
-							<c:if test="${i == page }">
-								<!-- 현재 페이지 -->
-								[${i}]
-							</c:if>
-							<c:if test="${i != page }">
-								<!-- 현재 페이지가 아닌 경우 -->
-								<a href="./NoticeListAction.sh?page=${i}">[${i}]</a>
-							</c:if>
-						</c:forEach>
-
-						<!-- 다음 블럭으로 이동 -->
-						<c:if test="${endPage < pageCount }">
-							<a href="./NoticeListAction.sh?page=${startPage+10 }">[다음]</a>
-						</c:if>
-
-						<!-- 마지막 페이지로 이동 -->
-						<a href="./NoticeListAction.sh?page=${pageCount }"
-							style="text-decoration: none"> >> </a>
-					</c:if> --%>
-					
 				</div>
 			</div>
 
@@ -147,4 +110,4 @@
 </section>
 
 <!-- footer 파일 불러오기 -->
-<%@ include file="/footer.jsp"%>
+<%@ include file="/common/footer.jsp"%>

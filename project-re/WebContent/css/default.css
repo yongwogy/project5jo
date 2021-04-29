@@ -1,6 +1,15 @@
 @charset "UTF-8";
 
-/* header */
+	/* a */
+	a:link {
+		text-decoration: none;
+	}
+	
+	a:visited {
+		text-decoration: none;
+	}
+	
+	/* header */
 	header {
 		position: relative;
 		height: 100px;
@@ -10,7 +19,7 @@
 		right: 0;
 		top: 0;
 	}
-	
+
 	header > h1 {
 		text-align: center;
 	}
@@ -31,6 +40,7 @@
 		background-image: url('../img/top.jpg');
 		background-repeat : no-repeat;
 		height: 300px;
+		cursor: pointer;
 	}
 	
 	/* nav */
@@ -38,6 +48,11 @@
 		position: relative;
 		height: 50px;
 		background-color: #7b797c;
+	}
+
+	nav > ul {
+		position: relative;
+		margin: auto 0;
 	}
 	
 	nav li {
@@ -68,6 +83,12 @@
 	article {
 		background-color: #f0f0f0;
 		height: 200px;
+	}
+	
+	/* notice */
+	#del_tab {
+		margin: 0 auto;
+		height: 100px;
 	}
 	
 	

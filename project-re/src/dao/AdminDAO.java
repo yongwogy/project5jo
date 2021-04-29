@@ -205,4 +205,106 @@ public class AdminDAO {
 		
 		return result;
 	}
+	
+	// 자유게시판 글 삭제
+	public int deleteBoard(int num) {
+		int result = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = getConnection();
+			
+			String sql = "delete from board where num = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			result = pstmt.executeUpdate();	// SQL문 실행
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(pstmt!=null) try { pstmt.close(); }catch(Exception e) {}
+			if(con!=null) try { con.close(); }catch(Exception e) {}
+		}
+		
+		return result;
+	}
+	
+	// 자유게사판 댓글 삭제
+	public int deleteReboard(int num, int reSeq) {
+		int result = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = getConnection();
+			
+			String sql = "delete from reboard where num = ? and re_seq = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.setInt(2, reSeq);
+			result = pstmt.executeUpdate();	// SQL문 실행
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(pstmt!=null) try { pstmt.close(); }catch(Exception e) {}
+			if(con!=null) try { con.close(); }catch(Exception e) {}
+		}
+		
+		return result;
+	}
+	
+	// qna 게시판 글 삭제
+	public int deleteQna(int num) {
+		int result = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = getConnection();
+			
+			String sql = "delete from qna where num = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			result = pstmt.executeUpdate();	// SQL문 실행
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(pstmt!=null) try { pstmt.close(); }catch(Exception e) {}
+			if(con!=null) try { con.close(); }catch(Exception e) {}
+		}
+		
+		return result;
+	}
+	
+	// 갤러리 게시판 글 삭제
+	public int deleteGallery(int num) {
+		int result = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = getConnection();
+			
+			String sql = "delete from gallery where num = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			result = pstmt.executeUpdate();	// SQL문 실행
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(pstmt!=null) try { pstmt.close(); }catch(Exception e) {}
+			if(con!=null) try { con.close(); }catch(Exception e) {}
+		}
+		
+		return result;
+	}
+	
 }

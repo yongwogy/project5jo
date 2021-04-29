@@ -14,9 +14,9 @@
 %>
 
 <script>
-	location.href="./NoticeListAction.sh";
+	/* location.href="./NoticeListAction.sh"; */
 	/* location.href="./AdminListAction.sw"; */
-	/* location.href="./MainAction.do"; */
+	location.href="./MainAction.do";
 	
 </script>
 

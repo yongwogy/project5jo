@@ -1,18 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<style>
-	/* notice */
-	#del_tab {
-		margin: 0 auto;
-		height: 100px;
-	}
-
-</style>
-
-    
 <!-- header 파일 불러오기 -->
-<%@ include file="/header.jsp" %>
+<%@ include file="/common/header.jsp" %>
     
     <section>
 		<div id="contents" class="col-10 container-fluid">
@@ -28,7 +18,7 @@
 						<table id="del_tab" class="table table-bordered border-dark w-50">
 							<tr>
 								<td colspan="2" class="text-center">
-									삭제하시려면 '<span style = 'color:red;'>지금삭제</span>' 를 입력하세요
+									삭제하시려면 '<span class="text-danger">지금삭제</span>' 를 입력하세요
 								</td>
 							</tr>
 							<tr>
@@ -40,7 +30,7 @@
 							<tr>
 								<td colspan="2" class="text-center">
 									<input type="submit" class="btn btn-secondary btn-sm" value="삭제">
-									<input type="reset" class="btn btn-secondary btn-sm" value="취소">
+									<input type="reset" class="btn btn-secondary btn-sm" onClick="history.go(-1)" value="취소">
 								</td>
 							</tr>
 						</table>
@@ -51,4 +41,4 @@
 	</section>
 	
 <!-- footer 파일 불러오기 -->
-<%@ include file="/footer.jsp" %>
+<%@ include file="/common/footer.jsp" %>
